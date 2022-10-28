@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Index</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        #main{
+            width: 70%;
+            background-color: rgb(176, 198, 223);
+            margin: auto;
+            border-radius: 5px;
+        }   
+
+        section{
+            width: 75%;
+            background-color: rgb(139, 181, 226);
+            border-radius: 10px;
+            margin: 20px auto;
+        }
+
+        #main, section{
+            padding: 5px;
+            box-sizing: content-box;
+        }
+
+        .go, #top{
+            text-align: center;
+        }
+
+        a:link{
+            text-decoration: none;
+            color: rgb(82, 82, 82);
+        }
+
+        a:hover{
+            color: aqua;
+        }
+
+        #txtTop{
+            width: 75%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <div id="txtTop">
+            <h1 id="top">Basic Geometry</h1>
+            <p>In this section, we are going to find the Area of some two-dimension shapes</p>
+            <p>You can click on any shape below:</p>
+
+            <ul>
+                <li><a href="#circle">Circle</a></li>
+                <li><a href="#triangle">Triangle</a></li>
+                <li><a href="#square">Square</a></li>
+                <li><a href="#rectangle">Rectangle</a></li>
+            </ul>
+        </div>
+
+
+        <section id="circle">
+            <h2>Circle Area</h2>
+
+            <div>
+                <label for="radius">Enter the value of the circle's radius:</label>
+                <input type="text" id="radius">
+            </div>
+                
+            <div>
+                <label for="circle_area">Result:</label>
+                <input type="text" id="circle_area" readonly>
+            </div>
+            <hr>
+            <button onclick="circleArea()">Calculate</button>
+        </section>
+
+        <div class="go">
+            <a href="#top">Got to top</a>
+        </div>
+
+        <section id="triangle">
+            <h2>Triganle Area</h2>
+
+            <div>
+                <label for="base">Enter the value of the triangle's base:</label>
+                <input type="text" id="base">
+                <br>
+                <label for="height">Enter the value of the triangle's height:</label>
+                <input type="text" id="height">
+            </div>
+                
+            <div>
+                <label for="triangle_area">Result:</label>
+                <input type="text" id="triangle_area" readonly>
+            </div>
+            <hr>
+            <button onclick="triangleArea()">Calculate</button>
+        </section>
+
+        <div class="go">
+            <a href="#top">Got to top</a>
+        </div>
+
+        <section id="Square">
+            <h2>Square Area</h2>
+
+            <div>
+                <label for="lenght">Enter the value of the square's lenght:</label>
+                <input type="text" id="lenght">
+            </div>
+                
+            <div>
+                <label for="square_area">Result:</label>
+                <input type="text" id="square_area" readonly>
+            </div>
+            <hr>
+            <button onclick="squareArea()">Calculate</button>
+        </section>
+
+        <div class="go">
+            <a href="#top">Got to top</a>
+        </div>
+
+        <section id="Rectangle">
+            <h2>Rectangle Area</h2>
+
+            <div>
+                <label for="width">Enter the value of the rectangle's width:</label>
+                <input type="text" id="width">
+                <br>
+                <label for="heightRect">Enter the value of the rectangle's height:</label>
+                <input type="text" id="heightRect">
+            </div>
+                
+            <div>
+                <label for="rectangle_area">Result:</label>
+                <input type="text" id="rectangle_area" readonly>
+            </div>
+            <hr>
+            <button onclick="rectangleArea()">Calculate</button>
+        </section>
+    </div>
+
+    <script >
+        function circleArea(){
+            var radius = parseInt(document.getElementById('radius').value);
+            console.log("Cirlce'radius = " + radius + "/ type = "+ typeof radius);
+
+            var area = Math.PI*radius*radius;
+            console.log("Circle's area = " + area);
+
+            document.getElementById('circle_area').value = area;
+        }
+
+        function triangleArea(){
+            var base = parseInt(document.getElementById('base').value);
+            console.log("Triangle's base = " + base + "/ type = "+ typeof base);
+
+            var height = parseInt(document.getElementById('height').value);
+            console.log("Trinagle's height = " + height + "/ type = "+ typeof height);
+
+            var area = Math.PI*base*height;
+            console.log("Triangle's area = " + area);
+
+            document.getElementById('triangle_area').value = area;
+        }
+
+        function squareArea(){
+            var lenght = parseInt(document.getElementById('lenght').value);
+            console.log("Square side's lenght = " + lenght + "/ type = "+ typeof lenght);
+
+            var area = lenght*lenght;
+            console.log("Square's area = " + area);
+
+            document.getElementById('square_area').value = area;
+        }
+
+        function rectangleArea(){
+            var width = parseInt(document.getElementById('width').value);
+            console.log("rectangle's width = " + width + "/ type = "+ typeof width);
+
+            var height = parseInt(document.getElementById('heightRect').value);
+            console.log("Rectangle's height = " + height + "/ type = "+ typeof height);
+
+            var area = width*height;
+            console.log("Rectangle's area = " + area);
+
+            document.getElementById('rectangle_area').value = area;
+        }
+    </script>
+</body>
+</html>
